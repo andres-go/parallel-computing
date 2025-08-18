@@ -1,10 +1,7 @@
 #include<iostream>
-#include<memory>
 #include<thread>
 #include<string>
 #include<print>
-#include<mutex>
-#include<condition_variable>
 #include <cstdlib>
 #include <ctime>
 #include <vector>
@@ -45,7 +42,7 @@ Adder* find_max(std::vector<Adder>& adders) {
 
 
 int main() {
-    srand(time(0));
+    srand(time(nullptr));
 
     std::vector<Adder> adders;
     for (int i = 1; i <= 10; i++) {

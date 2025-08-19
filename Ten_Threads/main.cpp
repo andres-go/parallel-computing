@@ -20,8 +20,8 @@ public:
         return sum;
     }
 
-    int get_sum() const { return sum; }
-    int get_id() const { return id; }
+    int getSum() const { return sum; }
+    int getId() const { return id; }
 
     bool operator<(const Adder &other) const {
         return sum < other.sum;
@@ -31,13 +31,13 @@ public:
 Adder* find_max(std::vector<Adder>& adders) {
     if (adders.empty()) return nullptr;
 
-    Adder* max_adder = &adders[0];
+    Adder* maxAdder = &adders[0];
     for (auto& adder : adders) {
-        if (*max_adder < adder) {
-            max_adder = &adder;
+        if (*maxAdder < adder) {
+            maxAdder = &adder;
         }
     }
-    return max_adder;
+    return maxAdder;
 }
 
 
@@ -62,12 +62,12 @@ int main() {
     }
 
     for (auto& adder : adders) {
-        std::println("Sum{} = {}", adder.get_id(), adder.get_sum());
+        std::println("Sum{} = {}", adder.getId(), adder.getSum());
     }
 
-    Adder* max_adder = find_max(adders);
-    if (max_adder) {
-        std::println("Highest Sum{}: {}", max_adder->get_id(), max_adder->get_sum());
+    Adder* maxAdder = find_max(adders);
+    if (maxAdder) {
+        std::println("Highest Sum{}: {}", maxAdder->getId(), maxAdder->getSum());
     }
 
 }

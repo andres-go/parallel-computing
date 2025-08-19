@@ -28,6 +28,7 @@ public:
     }
 };
 
+// points to Adder objs
 Adder* find_max(std::vector<Adder>& adders) {
     if (adders.empty()) return nullptr;
 

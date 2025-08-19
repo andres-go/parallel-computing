@@ -47,7 +47,7 @@ int main() {
     std::vector<Adder> adders;
     for (int i = 1; i <= 10; i++) {
         adders.emplace_back(i);
-    }
+    }g
 
     std::vector<std::thread> threads;
     for (auto& adder : adders) {

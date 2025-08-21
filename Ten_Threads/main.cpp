@@ -28,19 +28,6 @@ public:
     }
 };
 
-// points to Adder objs
-Adder* find_max(std::vector<Adder>& adders) {
-    if (adders.empty()) return nullptr;
-
-    Adder* maxAdder = &adders[0];
-    for (auto& adder : adders) {
-        if (*maxAdder < adder) {
-            maxAdder = &adder;
-        }
-    }
-    return maxAdder;
-}
-
 
 int main() {
     srand(time(nullptr));
@@ -66,9 +53,9 @@ int main() {
         std::println("Sum{} = {}", adder.getId(), adder.getSum());
     }
 
-    Adder* maxAdder = find_max(adders);
-    if (maxAdder) {
-        std::println("Highest Sum{}: {}", maxAdder->getId(), maxAdder->getSum());
-    }
+    // use < operator from Adder and choose last
+    std::sort(adders.begin(), adders.end());
+    Adder* maxAdder = &adders.back();
+    std::cout << "Highest Sum" << maxAdder->getId() << ": " << maxAdder->getSum() << std::endl;
 
 }

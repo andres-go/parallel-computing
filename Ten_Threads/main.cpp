@@ -56,6 +56,6 @@ int main() {
     // use < operator from Adder and choose last
     std::sort(adders.begin(), adders.end());
     Adder* maxAdder = &adders.back();
-    std::cout << "Highest Sum" << maxAdder->getId() << ": " << maxAdder->getSum() << std::endl;
+    std::println("Highest Sum{} = {}", maxAdder->getId(), maxAdder->getSum());
 
 }
